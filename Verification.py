@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 18 16:11:52 2024
 
-@author: sriharsha.marupudi
-"""
 import sys 
 import numpy as np  
-sys.path.append("/gpfs_projects.sriharsha.marupudi/PCD/Harsha/2023/Storage/January/Dosage_Code/")
 # 16 cm, 2xradius, 50%, pdgn = 0.03272299241112477
 
 def exposure_per_fluence(E):
