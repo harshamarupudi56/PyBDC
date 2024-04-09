@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 18 16:11:52 2024
 
+@author: sriharsha.marupudi
+"""
 import sys 
 import numpy as np  
-# 16 cm, 2xradius, 50%, pdgn = 0.03272299241112477
+from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
+# 16 cm, 2xradius, 50%, pdgn = 0.03272299241112477 #300 projections 
 
 def exposure_per_fluence(E):
     exposure = np.zeros(len(E))
@@ -28,20 +33,16 @@ def dgn_calculate(a, b, c, d, e, f, g, h, keVs):
         dgn[i] = temp
     return dgn
 
-
-
 def pDgN_calculate_denominator(I,exposure):
     total = I*exposure 
     pDgN_denom = np.sum(total)
 
     return pDgN_denom 
 
-
 def pDgN_calculate_numerator(I,dgn,exposure):
     total = I * exposure * dgn 
     pDgN_num = sum(total)
     return pDgN_num 
-
 
 def calculate_pDgNct(*values):
     keV = values[2]; I = values[3];
@@ -59,13 +60,25 @@ def calculate_pDgNct(*values):
     
     return pDgN
 
-    # calculate mgd
-    
-def calculate_mgd(air_KERMA, dgn,number_of_projections,mAs): 
-    
-    mgd = air_KERMA*dgn*number_of_projections*mAs
-    return mgd 
+# calculate mgd input air kerma for 1 projection 
+def calculate_mgd(air_KERMA, dgn, number_of_projections, mAs, air_KERMA_input_units, output_units):
+    # Convert air kerma input to mGy if it is not already in mGy
+    if air_KERMA_input_units != 'mGy':
+        if air_KERMA_input_units == 'mrad':
+            air_KERMA = air_KERMA * 0.01  # convert from mrad air kerma to mGy
+        elif air_KERMA_input_units == 'R':
+            air_KERMA = air_KERMA * 8.77  # convert from R to mGy
+        elif air_KERMA_input_units == 'mR':
+            air_KERMA = air_KERMA * 0.00877  # convert from mR to mGy
 
+    # Calculate MGD in mGy/mGy
+    mgd = air_KERMA * dgn * float(number_of_projections) * mAs
+
+    # Convert MGD to mrad if output units are mrad
+    if output_units == 'mrad':
+        mgd = mgd * 100  # converts mgd to mrad
+
+    return mgd
 
 a = -0.41324119391158
 b = 4.88540710576677
@@ -76,7 +89,7 @@ f = 2.66123817129083
 g = -2.67974610124986
 h = 0.883219836298924
 
-air_KERMA = 5.0 
+air_KERMA = 5.0 # mR 
 number_of_projections = 300 
 mAs = 0.5 
 
@@ -92,7 +105,7 @@ pDgN = pDgN_num / pDgN_denom
 
 print("pDgN =", pDgN)
 
-mgd = calculate_mgd(air_KERMA,pDgN,number_of_projections,mAs)
+mgd = calculate_mgd(air_KERMA,pDgN,number_of_projections,mAs,'mR','mGy')
 
 print("mgd =", mgd)
  
