@@ -40,10 +40,33 @@ def pDgN_calculate_denominator(I,exposure):
 def pDgN_calculate_numerator(I,dgn,exposure):
     total = I * exposure * dgn 
     pDgN_num = sum(total)
- 
     return pDgN_num 
 
- 
+
+def calculate_pDgNct(*values):
+    keV = values[2]; I = values[3];
+    psiE = np.array(list(map(exposure_per_fluence,keV)))
+    
+    if values[0] == 'Sarno Koning':
+        variables = values[1]
+        DgNctE = np.array(list(map(sarno_dgnct,variables[:,0],variables[:,1],variables[:,2],variables[:,3],
+                                   variables[:,4],variables[:,5],variables[:,6],variables[:,7],keV)));    
+        pDgN = np.sum(I*psiE*DgNctE)/np.sum(I*psiE);
+    
+    elif values[0] == 'Hernandez':
+        DgN_list = np.array(values[1])
+        pDgN = np.sum(I*psiE*DgN_list)/(np.sum(I*psiE))
+    
+    return pDgN
+
+    # calculate mgd
+    
+def calculate_mgd(air_KERMA, dgn,number_of_projections,mAs): 
+    
+    mgd = air_KERMA*dgn*number_of_projections*mAs
+    return mgd 
+
+
 a = -0.41324119391158
 b = 4.88540710576677
 c = -13.0460380815292
@@ -52,6 +75,10 @@ e = -9.19621868949206
 f = 2.66123817129083
 g = -2.67974610124986
 h = 0.883219836298924
+
+air_KERMA = 5.0 
+number_of_projections = 300 
+mAs = 0.5 
 
 keV = np.array([10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14])
 I = np.array([6.20275e2, 2.26229e2, 5.25667e2, 2.39324e3, 1.45979e3, 2.17293e3, 3.36611e3, 4.89394e3, 6.61405e3])
@@ -65,4 +92,7 @@ pDgN = pDgN_num / pDgN_denom
 
 print("pDgN =", pDgN)
 
+mgd = calculate_mgd(air_KERMA,pDgN,number_of_projections,mAs)
+
+print("mgd =", mgd)
  
