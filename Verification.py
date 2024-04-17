@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Verification code for  a breast with a diamter 16 cm, radius of 2xradius, and glandularity of 50%. Using the defined keV, I, and coefficients the normalized glandular dose can be computed. The correct value for these parameters 
+is 0.03272299241112477. The mean glandular dose was computed using the parameters of 300 projections, 0.5 mAs, and an input air kerma of 5 mR.  
+
+"""
+
+
 import sys 
 import numpy as np  
 from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
-# 16 cm, 2xradius, 50%, pdgn = 0.03272299241112477 #300 projections 
 
 def exposure_per_fluence(E):
     exposure = np.zeros(len(E))
