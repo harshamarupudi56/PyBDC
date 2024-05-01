@@ -15,7 +15,7 @@ from matplotlib.pyplot import style as plt_style, ioff as plt_ioff, figure as pl
 plt_ioff() # suppress pyplot popups
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys 
-sys.path.append("/gpfs_projects.sriharsha.marupudi/PCD/Harsha/2023/Storage/January/Dosage_Code/")
+
 from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
 
 
@@ -237,7 +237,7 @@ class Main_Window():
         textbox = customtkinter.CTkTextbox(master=pop_up, width=750, height= 500)
         textbox.pack(fill ='both')
         
-        with open('Paper Citations.txt','r') as file:
+        with open('Paper_Citations.txt','r') as file:
             text = ""
             data = file.readlines()
             data = "".join(data)
@@ -254,7 +254,7 @@ class Main_Window():
        textbox = customtkinter.CTkTextbox(master=pop_up, width=800, height= 500)
        textbox.pack(fill ='both')
        
-       with open('CT_Dose_Calculate_Quick_Guide.txt', 'r') as file:
+       with open('User_Guide.txt', 'r') as file:
            data = file.read()
            
        textbox.insert("end", f'{data}')

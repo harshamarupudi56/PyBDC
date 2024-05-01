@@ -15,7 +15,7 @@ from matplotlib.pyplot import style as plt_style, ioff as plt_ioff, figure as pl
 plt_ioff() # suppress pyplot popups
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys 
-sys.path.append("/gpfs_projects.sriharsha.marupudi/PCD/Harsha/2023/Storage/January/Dosage_Code/")
+
 from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
 
 
