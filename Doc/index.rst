@@ -31,7 +31,7 @@ Currently supports the following plugins:
 * Sarno 49 kVp W Spectra
 * Sechopoulus 49 kvP W Spectra 
 
-Detailed descriptions on individual methods are provided in section :ref:`methodsoverview`.
+Detailed descriptions on individual methods are provided in section :ref:`Methods Overview`.
 
 Installation
 ==================
