@@ -9,32 +9,32 @@ Similar to the Sarno Koning BCT, the Sechopolous method utilizes the Koning BCT 
 
 The Hernandez Heterogeneous BCT method compared to the Sarno methods, models the breast as a heterogeneous mixture of adipose and glandular tissue where the individual tissues voxels are either 100% adipose or 100% glandular. The skin thickness is assumed to be 1.5 mm and the radiation source is placed 650 mm from the isocenter. Rather than being characterized by breast glandularity, this method uses volume glandular fraction or VGF for short. The heterogeneous categories, V1, V3, and V5 are characterized as follows:
 
-•	V1: Volume Glandular Fraction (VGF) = 19.9%, median volume of 276 cm3, median diameter through the center of 87 mm, and median diameter at the chest wall of 103.4 mm
+V1: Volume Glandular Fraction (VGF) = 19.9%, median volume of 276 cm3, median diameter through the center of 87 mm, and median diameter at the chest wall of 103.4 mm
 
-•	V3: Volume Glandular Fraction (VGF) = 9.5%, median volume of 616 cm3, median diameter through the center of 106.6 mm, and median diameter at the chest wall of 125.2 mm
+V3: Volume Glandular Fraction (VGF) = 9.5%, median volume of 616 cm3, median diameter through the center of 106.6 mm, and median diameter at the chest wall of 125.2 mm
 
-•	V5: Volume Glandular Fraction (VGF) = 3.8%, median volume of 1174 cm3, median diameter through the center of 124.4 mm, and median diameter at the chest wall of 150.4 mm
+V5: Volume Glandular Fraction (VGF) = 3.8%, median volume of 1174 cm3, median diameter through the center of 124.4 mm, and median diameter at the chest wall of 150.4 mm
 
 
 Choosing a Method
 ==================
 The GUI offers three methods the user can choose from which are Sarno Koning BCT, Sarno Incident Spectrum, and Hernandez Heterogeneous BCT via radio button selection. Next to each method, a radio button can be found that if pressed selects the method. You will note that once pressed, certain buttons and parameters are activated, and others are deactivated. What is activated and deactivated is as follows:
 
-•	Sarno Koning BCT
-o	Activated: Breast Diameter, Breast Height, Breast Glandularity, HVL, Air Kerma, Air Kerma units, MGD units, Clear Text, and Calculate Dose
-o	Deactivated: Heterogeneous Categories, Input Incident Spectrum, and Graph Spectrum
+Sarno Koning BCT
+Activated: Breast Diameter, Breast Height, Breast Glandularity, HVL, Air Kerma, Air Kerma units, MGD units, Clear Text, and Calculate Dose
+Deactivated: Heterogeneous Categories, Input Incident Spectrum, and Graph Spectrum
 
-•	Sechopoulos Koning BCT
-o	Activated: Breast Diameter, Breast Height, Breast Glandularity, HVL, Air Kerma, Air Kerma units, MGD units, Clear Text, and Calculate Dose
-o	Deactivated: Heterogeneous Categories, Input Incident Spectrum, and Graph Spectrum
+Sechopoulos Koning BCT
+Activated: Breast Diameter, Breast Height, Breast Glandularity, HVL, Air Kerma, Air Kerma units, MGD units, Clear Text, and Calculate Dose
+Deactivated: Heterogeneous Categories, Input Incident Spectrum, and Graph Spectrum
 
-•	Sarno Incident Spectrum
-o	Activated: Breast Diameter, Breast Height, Breast Glandularity, Air Kerma, Air Kerma units, MGD units, Input Incident Spectrum, Graph Spectrum*, Clear Text, and Calculate Dose
-o	Deactivated: HVL, Heterogeneous Categories
+Sarno Incident Spectrum
+Activated: Breast Diameter, Breast Height, Breast Glandularity, Air Kerma, Air Kerma units, MGD units, Input Incident Spectrum, Graph Spectrum*, Clear Text, and Calculate Dose
+Deactivated: HVL, Heterogeneous Categories
 
-•	Hernandez Heterogeneous BCT
-o	Activated: Heterogeneous Categories, Air Kerma, Air Kerma units, MGD units, Input Incident Spectrum, Graph Spectrum*, Clear Text, and Calculate Dose
-o	Deactivated: Breast Diameter, Breast Height, Breast Glandularity, HVL
+Hernandez Heterogeneous BCT
+Activated: Heterogeneous Categories, Air Kerma, Air Kerma units, MGD units, Input Incident Spectrum, Graph Spectrum*, Clear Text, and Calculate Dose
+Deactivated: Breast Diameter, Breast Height, Breast Glandularity, HVL
 
 Graph spectrum will be activated after a valid text file is entered. If an invalid text file is entered, a popup will appear prompting you to make the necessary changes.
 Program Inputs and Buttons 
