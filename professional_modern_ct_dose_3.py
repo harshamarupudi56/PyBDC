@@ -191,9 +191,9 @@ class Main_Window():
                                                   values=['mAs'], 
                                                   width=80, state='readonly')
         
-        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air KERMA per Projection:')
+        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air kerma per Projection:')
         self.air_KERMA_entry = customtkinter.CTkEntry(master= self.kerma_spec_frame, width=80)
-        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air KERMA Units:")
+        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air kerma Units:")
         self.air_KERMA_units_combo = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
                                                           values=['mrad','mGy','R','mR'], 
                                                           width=80, state='readonly')
