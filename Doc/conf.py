@@ -27,3 +27,9 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
+extensions = [
+    ...
+    'sphinx_rtd_theme',
+]
+
+html_theme = "sphinx_rtd_theme"
