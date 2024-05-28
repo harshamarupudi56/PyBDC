@@ -22,10 +22,10 @@ Quick Start Guide for PyBDC 1.0
 	   uses different sets of parameters. As such, the parameters necessary for the method will remain active 
 	   and those not necessary will remain inactive
 
-3. After choosing parameters, enter your air KERMA along with the input units and the desired output units. Air kerma is defined as the amount of energy deposited into the air when a photon passes through it. The number of projections should also
+3. After choosing parameters, enter your Air Kerma along with the input units and the desired output units. Air Kerma is defined as the amount of energy deposited into the air when a photon passes through it. The number of projections should also
 be added. This is defined as the number of individual X-ray measurements taken during the initial scan. 
 	
-	a) Simply enter your air KERMA into the air KERMA box and like before choose the input units in Air KERMA 
+	a) Simply enter your Air Kerma into the Air Kerma box and like before choose the input units in Air Kerma 
 	   Units and output units via MGD Units by pressing the downward arrow
 
 4. Depending on the method of your choice, you will have the option to input an incident spectrum and graph that 
