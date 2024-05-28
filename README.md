@@ -32,7 +32,7 @@ python3 professional_modern_ct_dose_3.py
 
 User guide
 ----------
-Please refer [User Guide](User_Guide) (Quick Start Guide) to check the workflow of PyBDC.
+Please refer to the technical documentation https://pybdc.readthedocs.io/en/latest/
 
 
 References
