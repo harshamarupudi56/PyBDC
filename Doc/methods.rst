@@ -1,7 +1,7 @@
 Methods Overview
 ==================
 
-The two Sarno Methods, Sarno Koning BCT and Sarno Incidental Spectrum methods are from the following paper: A Monte Carlo study of monoenergetic and polyenergetic normalized glandular dose (DgN) coefficients in mammography*. The Hernandez Heterogeneous BCT method is from the following paper: Updated breast CT dose coefficients (DgNct) using patient-derived breast shapes and heterogeneous fibroglandular distributions**. Lastly, the Sechopoulos method is from the following paper: Dosimetric characterization of a dedicated breast computed tomography clinical prototype***.
+The two Sarno Methods, Sarno Koning BCT and Sarno Incidental Spectrum methods are from the following paper: A Monte Carlo study of monoenergetic and polyenergetic normalized glandular dose (DgN) coefficients in mammograph*. The Hernandez Heterogeneous BCT method is from the following paper: Updated breast CT dose coefficients (DgNct) using patient-derived breast shapes and heterogeneous fibroglandular distributions. Lastly, the Sechopoulos method is from the following paper: Dosimetric characterization of a dedicated breast computed tomography clinical prototype***.
 
 The Sarno Koning BCT utilizes the Koning BCT apparatus which houses a 49 kVp W-anode with 1.40 mm Al. Other values are included because of possible variations in Al filter length. Sarno incidental on the other hand, uses an inputted incident spectrum. The paper, which contains both methods, models the breast as a cylinder of homogeneous mixture of adipose and glandular tissue. It further assumes a 1.45 mm thick skin layer and a radiation source placed 650 mm from the isocenter.
 
@@ -36,7 +36,7 @@ o	Deactivated: HVL, Heterogeneous Categories
 o	Activated: Heterogeneous Categories, Air Kerma, Air Kerma units, MGD units, Input Incident Spectrum, Graph Spectrum*, Clear Text, and Calculate Dose
 o	Deactivated: Breast Diameter, Breast Height, Breast Glandularity, HVL
 
-*Graph spectrum will be activated after a valid text file is entered. If an invalid text file is entered, a popup will appear prompting you to make the necessary changes.
+Graph spectrum will be activated after a valid text file is entered. If an invalid text file is entered, a popup will appear prompting you to make the necessary changes.
 Program Inputs and Buttons 
 
 Table 1 shows summarizes all the inputs into the program, the format, and the valid ranges. For the program inputs, the parameters other than BCT methods and the Air Kerma can be chosen using the downward arrow button. After clicking the downward arrow, a dropdown menu will appear where you can choose the option of your choice. The BCT method can be chosen via the radio buttons found to the left of the button and the Air Kerma can be manually entered in the box to the right of the parameter. Table 2 summarizes the different buttons and their purpose. These buttons can be simply pressed and the outlined effect in the table will occur. As mentioned above, in the Choosing a Method section, certain buttons will be active and inactive depending on the method chosen.
@@ -44,25 +44,25 @@ Table 1 shows summarizes all the inputs into the program, the format, and the va
 +---------------------------+-----------------------------------------------------+
 | Parameter name            | Input                                               |
 +===========================+=====================================================+
-| BCT methods*              | Sarno Koning BCT                                    |
+| BCT methods               | Sarno Koning BCT                                    |
 |                           | Sarno Incident Spectrum                             |
 |                           | Hernandez Heterogeneous BCT                         |
 +---------------------------+-----------------------------------------------------+
-| Breast Diameter (cm)#     | 8, 10, 12, 14, 16, 18 (Sarno method)               |
-|                           | 10, 12, 14, 16, 18 (Sechopoulos method)            |
+| Breast Diameter (cm)     | 8, 10, 12, 14, 16, 18 (Sarno method)                 |
+|                           | 10, 12, 14, 16, 18 (Sechopoulos method)             |
 +---------------------------+-----------------------------------------------------+
-| Breast Height##           | 1 x radius                                          |
+| Breast Height             | 1 x radius                                          |
 |                           | 1.5 x radius                                        |
 |                           | 2 x radius                                          |
 +---------------------------+-----------------------------------------------------+
-| Breast Glandularity       | 0.1%, 14.3%, 25%, 50%, 100% (Sarno method)         |
-|                           | 1%, 14.3%, 25%, 50%, 100% (Sechopoulos method)     |
+| Breast Glandularity       | 0.1%, 14.3%, 25%, 50%, 100% (Sarno method)          |
+|                           | 1%, 14.3%, 25%, 50%, 100% (Sechopoulos method)      |
 +---------------------------+-----------------------------------------------------+
 | HVL (mm Al)               | 1.25, 1.30, 1.35, 1.40, 1.45, 1.50                  |
 +---------------------------+-----------------------------------------------------+
-| Heterogeneous Categories**| V1, V3, V5                                          |
+| Heterogeneous Categories  | V1, V3, V5                                          |
 +---------------------------+-----------------------------------------------------+
-| Air Kerma                 | any numerical value***                             |
+| Air Kerma                 | any numerical value                                 |
 +---------------------------+-----------------------------------------------------+
 | Air Kerma Units           | R, mGy, mrad                                        |
 +---------------------------+-----------------------------------------------------+
@@ -73,11 +73,11 @@ Table 1 shows summarizes all the inputs into the program, the format, and the va
 Table 1. Summary of parameters and their inputs.
 
 
-*Selecting between the different methods activates and deactivates certain parameters. What is activated and deactivated is explained in further detail in the Choosing a Method section.
-**The Heterogeneous categories are further explained in the Methods Overview section.
-***The value inputted into Air Kerma must be numerical otherwise a pop up will appear prompting you to put in a numerical value
-#Breast diameter is defined as the diameter at the chest wall
-##Breast height is the chest wall-to-nipple distance. For the Sechopolous method it is defined as 0.5 x diameter, 0.75 x diameter, 1 x diameter. This redefining of breast height was done to keep accordance with the paper definitions.
+Selecting between the different methods activates and deactivates certain parameters. What is activated and deactivated is explained in further detail in the Choosing a Method section.
+The Heterogeneous categories are further explained in the Methods Overview section.
+The value inputted into Air Kerma must be numerical otherwise a pop up will appear prompting you to put in a numerical value
+Breast diameter is defined as the diameter at the chest wall
+Breast height is the chest wall-to-nipple distance. For the Sechopolous method it is defined as 0.5 x diameter, 0.75 x diameter, 1 x diameter. This redefining of breast height was done to keep accordance with the paper definitions.
 
 
 Table 2. Summary of Buttons and their functions.
@@ -101,10 +101,10 @@ Table 2. Summary of Buttons and their functions.
 
 
 
-*The chosen incident spectrum file must have a specific format which differs for the method chosen. This format is further elucidated in the Incident Spectrum Format section found below.
+The chosen incident spectrum file must have a specific format which differs for the method chosen. This format is further elucidated in the Incident Spectrum Format section found below.
 
 Incident Spectrum Format
-==================
+========================
 
 First, the incident spectrum must be saved in a text file (typically a ‘.txt’ file but any text file format is accepted) and it can have any name (there is no naming convention). Next, the text file inputs must be in the form of two columns where the keV is the first column and the counts is the second column. An image of the proper format is show below. You will note that the keV uses a step size of 0.5. Any step size can be used. The Hernandez Heterogeneous BCT DgN coefficients are interpolated to fit any step size.
  
