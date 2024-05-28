@@ -16,10 +16,8 @@ Table of Contents
    :maxdepth: 2
 
    install
-
-   methodsoverview
-
-   GUI
+   methods
+   gui
 
    examples
 
