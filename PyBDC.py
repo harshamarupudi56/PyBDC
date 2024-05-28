@@ -16,7 +16,7 @@ plt_ioff() # suppress pyplot popups
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys 
 
-from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
+from dose_equations import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
 
 
 #%% important functions
