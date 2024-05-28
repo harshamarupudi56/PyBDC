@@ -184,9 +184,9 @@ class Main_Window():
         self.calculate_button.grid(row=1,column=1, pady=5,padx=4)
         
         #%% create air kerma inputs
-        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air KERMA per Projection:')
+        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air Kerma per Projection:')
         self.air_KERMA_entry = customtkinter.CTkEntry(master= self.kerma_spec_frame, width=80)
-        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air KERMA Units:")
+        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air Kerma Units:")
         self.air_KERMA_units_combo = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
                                                           values=['mrad','mGy','R','mR'], 
                                                           width=80, state='readonly')
