@@ -1,4 +1,5 @@
-***Methods Overview***
+Methods Overview
+==================
 
 The two Sarno Methods, Sarno Koning BCT and Sarno Incidental Spectrum methods are from the following paper: A Monte Carlo study of monoenergetic and polyenergetic normalized glandular dose (DgN) coefficients in mammography*. The Hernandez Heterogeneous BCT method is from the following paper: Updated breast CT dose coefficients (DgNct) using patient-derived breast shapes and heterogeneous fibroglandular distributions**. Lastly, the Sechopoulos method is from the following paper: Dosimetric characterization of a dedicated breast computed tomography clinical prototype***.
 
@@ -15,8 +16,8 @@ The Hernandez Heterogeneous BCT method compared to the Sarno methods, models the
 •	V5: Volume Glandular Fraction (VGF) = 3.8%, median volume of 1174 cm3, median diameter through the center of 124.4 mm, and median diameter at the chest wall of 150.4 mm
 
 
-***Choosing a Method***
-
+Choosing a Method
+==================
 The GUI offers three methods the user can choose from which are Sarno Koning BCT, Sarno Incident Spectrum, and Hernandez Heterogeneous BCT via radio button selection. Next to each method, a radio button can be found that if pressed selects the method. You will note that once pressed, certain buttons and parameters are activated, and others are deactivated. What is activated and deactivated is as follows:
 
 •	Sarno Koning BCT
@@ -102,7 +103,8 @@ Table 2. Summary of Buttons and their functions.
 
 *The chosen incident spectrum file must have a specific format which differs for the method chosen. This format is further elucidated in the Incident Spectrum Format section found below.
 
-***Incident Spectrum Format***
+Incident Spectrum Format
+==================
 
 First, the incident spectrum must be saved in a text file (typically a ‘.txt’ file but any text file format is accepted) and it can have any name (there is no naming convention). Next, the text file inputs must be in the form of two columns where the keV is the first column and the counts is the second column. An image of the proper format is show below. You will note that the keV uses a step size of 0.5. Any step size can be used. The Hernandez Heterogeneous BCT DgN coefficients are interpolated to fit any step size.
  
