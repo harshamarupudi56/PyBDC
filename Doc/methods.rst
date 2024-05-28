@@ -86,7 +86,7 @@ Table 2. Summary of Buttons and their functions.
 | Button               | Function                                                         |
 +======================+==================================================================+
 | Input Incident       | Opens file prompt where you select your input incident file.    |
-| Spectrum            | The GUI will then read the input file and pull the keV and      |
+| Spectrum             | The GUI will then read the input file and pull the keV and      |
 |                      | counts from the file. It further prints the shortened file onto |
 |                      | the text box.                                                    |
 +----------------------+------------------------------------------------------------------+
