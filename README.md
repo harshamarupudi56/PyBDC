@@ -1,6 +1,6 @@
 # Python Breast Dosage Calculator: PyBDC 1.0
 Python toolkit for calculating dosage for breast CT.\
-The following software enables accurate dose estimation for one or various breast exposures specifically for breast CT. The software can be used on Windows and Mac operating systems and using a graphical user interface. The mode is further explained below along with an overview of the methods, how to choose a method, the program inputs and buttons, the incident spectrum format, images of the GUI, and the accompanying data files.
+The following software enables accurate dose estimation for one or various breast exposures specifically for breast CT. This tool is a GUI software that can be used on Windows, Mac, and Linux operating systems. The mode is further explained below along with an overview of the methods, how to choose a method, the program inputs and buttons, the incident spectrum format, images of the GUI, and the accompanying data files.
 
 Code execution
 ----------
