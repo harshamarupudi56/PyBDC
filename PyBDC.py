@@ -15,18 +15,15 @@ from matplotlib.pyplot import style as plt_style, ioff as plt_ioff, figure as pl
 plt_ioff() # suppress pyplot popups
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys 
-
 from dose_equations import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
 
-
-#%% important functions
 
 # quit me function
 def quit_me(): 
     root.quit()
     root.destroy()
 
-# calculate pDgN
+# Calculate polyenergetic normalized mean glandular dose values in mammography geometry based on coefficients X-ray spectra, hantom size, volumetric glandular fraction (VGF), x-ray technique factors, and location of the heterogeneous glandular distributions
 def calculate_pDgNct(*values):
     keV = values[2]; I = values[3];
     psiE = np.array(list(map(exposure_per_fluence,keV)))
@@ -43,8 +40,8 @@ def calculate_pDgNct(*values):
     
     return pDgN
 
-# read method outputs
-with open('method_specific_outputs.txt','r') as file:
+# read method inputs 
+with open('method_specific_inputs.txt','r') as file:
      data = file.readlines() # all the outputs
      
 
@@ -419,6 +416,7 @@ class Main_Window():
     
     # calculate mgd
     def calculate_mgd(self,air_kerma_input,air_kerma,dgn,output_units,number_of_projections):
+        # Use input air kerma, dgn coefficient, and number of projections to compute mean glandular dose per projection
         if air_kerma_input != 'mGy':
             if air_kerma_input == 'mrad':
                 air_kerma = air_kerma * 0.01 # convert from mrad air kerma to mGy
@@ -453,6 +451,7 @@ class Main_Window():
         
     # function to calculate dose    
     def calculate_dose(self):
+        # Return dgn value based on data from publications 
         # get inputs
         current_method = self.method_chosen.get()
         air_KERMA_input_units = self.air_KERMA_units_combo.get() 
