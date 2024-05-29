@@ -49,13 +49,16 @@ pip install -r requirements.txt
 **The required dependencies located in requirements.txt** 
 
 customtkinter==5.2.2
+
 matplotlib==3.8.0
+
 numpy==1.26.0
+
 pandas==1.3.4
 
 **Run PyBDC**
 
-python3 professional_modern_ct_dose_3.py
+python3 PyBDC.py
 
 
 **PyBDC Team:**
