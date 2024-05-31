@@ -15,15 +15,18 @@ from matplotlib.pyplot import style as plt_style, ioff as plt_ioff, figure as pl
 plt_ioff() # suppress pyplot popups
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys 
-from dose_equations import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
+sys.path.append("/gpfs_projects.sriharsha.marupudi/PCD/Harsha/2023/Storage/January/Dosage_Code/")
+from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
 
+
+#%% important functions
 
 # quit me function
 def quit_me(): 
     root.quit()
     root.destroy()
 
-# Calculate polyenergetic normalized mean glandular dose values in mammography geometry based on coefficients X-ray spectra, hantom size, volumetric glandular fraction (VGF), x-ray technique factors, and location of the heterogeneous glandular distributions
+# calculate pDgN
 def calculate_pDgNct(*values):
     keV = values[2]; I = values[3];
     psiE = np.array(list(map(exposure_per_fluence,keV)))
@@ -40,8 +43,8 @@ def calculate_pDgNct(*values):
     
     return pDgN
 
-# read method inputs 
-with open('method_specific_inputs.txt','r') as file:
+# read method outputs
+with open('method_specific_outputs.txt','r') as file:
      data = file.readlines() # all the outputs
      
 
@@ -61,6 +64,7 @@ class Main_Window():
         helpmenu.add_command(label="About", command=self.about)
         menubar.add_cascade(label="Help", menu=helpmenu)
         menubar.add_command(label="Exit", command=lambda: quit_me())
+
         # create the different frames
         self.methods_frame = customtkinter.CTkFrame(master=master)
         self.methods_frame.grid(row=0,column=0, ipady=36)
@@ -106,7 +110,7 @@ class Main_Window():
         #%% fill in the main input box
         self.Breast_diameter_label = customtkinter.CTkLabel(master=self.inputs_frame, text = 'Breast Diameter (cm):')
         self.Breast_diameter_combo = customtkinter.CTkComboBox(master=self.inputs_frame, 
-                                                              values=['8','10','12','14','16','18'], 
+                                                              values=['8','10','12','14','19','18'], 
                                                               width=120, state='readonly')
         self.Breast_diameter_combo.set('8')
         
@@ -133,13 +137,12 @@ class Main_Window():
                                              width=120, state='readonly') # V1 = 19.9%, V3 = 9.5%, V5 = 3.8%
         self.VGF_combo.set('V1 = 19.9%')
         self.input_spectra_button = customtkinter.CTkButton(master=self.inputs_frame,
-                                                       width=240,
+                                                       width=220,
                                                        border_width=0,
                                                        corner_radius=8,
-                                                       text="Input Incident Spectrum",
-                                                       font = ('TkDefaultFont',14),
+                                                       text="Upload Incident Spectrum File",
+                                                       font = ('System',14),
                                                        command=lambda:self.browse_files())
-        
         self.Breast_diameter_label.grid(row=0,column=0,pady=5,padx=4,sticky=W)
         self.Breast_diameter_combo.grid(row=0,column=1,pady=5, padx=10, sticky=W)
         self.Breast_height_label.grid(row=1,column=0, pady=5,padx=4,sticky=W)
@@ -156,23 +159,23 @@ class Main_Window():
         
         #%% create text box and buttons for output frame
         self.output_textbox = customtkinter.CTkTextbox(self.output_frame, width=285, height=305)
-        self.output_textbox.tag_config('red', foreground='red')
+        self.output_textbox.tag_config('green', foreground='green')
         self.output_textbox.configure(state='normal')
-        self.output_textbox.insert("end", f'{"".join(data[0:5])}', 'red')
+        self.output_textbox.insert("end", f'{"".join(data[0:5])}', 'green')
         self.output_textbox.configure(state='disabled')
         self.clear_button = customtkinter.CTkButton(master=self.output_frame,
                                                        width=120,
                                                        border_width=0,
                                                        corner_radius=8,
                                                        text="Clear Text",
-                                                       font = ('TkDefaultFont',14),
+                                                       font = ('System',14),
                                                        command=lambda: self.clear_text())
         self.calculate_button = customtkinter.CTkButton(master=self.output_frame,
                                                        width=120,
                                                        border_width=0,
                                                        corner_radius=8,
                                                        text="Calculate Dose",
-                                                       font = ('TkDefaultFont',14),
+                                                       font = ('System',14),
                                                        command=lambda: self.calculate_dose())
         
         self.clear_button.grid(row=1,column=0,pady=5,padx=4)
@@ -188,14 +191,15 @@ class Main_Window():
                                                   values=['mAs'], 
                                                   width=80, state='readonly')
         
-        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air kerma per Projection:')
+        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air KERMA per Projection:')
         self.air_KERMA_entry = customtkinter.CTkEntry(master= self.kerma_spec_frame, width=80)
-        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air kerma Units:")
+        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air KERMA Units:")
         self.air_KERMA_units_combo = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
                                                           values=['mrad','mGy','R','mR'], 
                                                           width=80, state='readonly')
         self.air_KERMA_units_combo.set('R')
-        self.air_KERMA_output_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text='MGD Units:', anchor=W)
+        self.air_KERMA_output_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text='MGD Units:',
+                                                             anchor=W)
         self.output_units = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
                                                  values=['mrad','mGy'], width=80,
                                                  state='readonly')
@@ -210,7 +214,7 @@ class Main_Window():
                                                        border_width=0,
                                                        corner_radius=8,
                                                        text="Graph Spectrum",
-                                                       font = ('TkDefaultFont',14),
+                                                       font = ('System',14),
                                                        command=self.plot_spectra)
         
         self.air_KERMA_label.grid(row=1, column=0, pady=5, padx=4, sticky=W)
@@ -234,7 +238,7 @@ class Main_Window():
         textbox = customtkinter.CTkTextbox(master=pop_up, width=750, height= 500)
         textbox.pack(fill ='both')
         
-        with open('Paper_Citations.txt','r') as file:
+        with open('Paper Citations.txt','r') as file:
             text = ""
             data = file.readlines()
             data = "".join(data)
@@ -251,7 +255,7 @@ class Main_Window():
        textbox = customtkinter.CTkTextbox(master=pop_up, width=800, height= 500)
        textbox.pack(fill ='both')
        
-       with open('User_Guide.txt', 'r') as file:
+       with open('CT_Dose_Calculate_Quick_Guide.txt', 'r') as file:
            data = file.read()
            
        textbox.insert("end", f'{data}')
@@ -272,12 +276,12 @@ class Main_Window():
             self.graph_spectra.configure(state='disabled')
             self.Breast_glandularity_combo.configure(values=['0.1%', '14.3%', '25%', '50%', '75%', '100%'])
             self.Breast_glandularity_combo.set('0.1%')
-            self.Breast_diameter_combo.configure(values=['8','10','12','14','16','18'])
+            self.Breast_diameter_combo.configure(values=['8','10','12','14','19','18'])
             self.Breast_diameter_combo.set('8')
             self.Breast_height_combo.configure(values=['1 x radius', '1.5 x radius', '2 x radius'])
             self.Breast_height_combo.set('1 x radius')
             self.output_textbox.configure(state='normal') # outputs text
-            self.output_textbox.insert("end", f'{"".join(data[5:12])}', 'red')
+            self.output_textbox.insert("end", f'{"".join(data[5:12])}', 'green')
             self.output_textbox.configure(state='disabled')
             self.keV = []; self.I = []; self.plot_spectra()
             
@@ -291,12 +295,12 @@ class Main_Window():
             self.graph_spectra.configure(state='disabled')
             self.Breast_glandularity_combo.configure(values=['0.1%', '14.3%', '25%', '50%', '75%', '100%'])
             self.Breast_glandularity_combo.set('0.1%')
-            self.Breast_diameter_combo.configure(values=['8','10','12','14','16','18'])
+            self.Breast_diameter_combo.configure(values=['8','10','12','14','19','18'])
             self.Breast_diameter_combo.set('8')
             self.Breast_height_combo.configure(values=['1 x radius', '1.5 x radius', '2 x radius'])
             self.Breast_height_combo.set('1 x radius')
             self.output_textbox.configure(state='normal')
-            self.output_textbox.insert("end", f'{"".join(data[12:16])}', 'red')
+            self.output_textbox.insert("end", f'{"".join(data[12:19])}', 'green')
             self.output_textbox.configure(state='disabled')
             self.keV = []; self.I = []; self.plot_spectra()
             
@@ -309,11 +313,11 @@ class Main_Window():
             self.HVL_combo.configure(state='disabled')
             self.graph_spectra.configure(state='disabled')
             self.output_textbox.configure(state='normal')
-            self.output_textbox.insert("end", f'{"".join(data[12:16])}', 'red')
+            self.output_textbox.insert("end", f'{"".join(data[12:19])}', 'green')
             self.output_textbox.configure(state='disabled')
             self.keV = []; self.I = []; self.plot_spectra()
             self.output_textbox.configure(state='normal')
-            self.output_textbox.insert("end", f'{"".join(data[16:29])}', 'red')
+            self.output_textbox.insert("end", f'{"".join(data[19:29])}', 'green')
             self.output_textbox.configure(state='disabled')
         
         else:  # Sechopoulus method
@@ -325,11 +329,11 @@ class Main_Window():
             self.HVL_combo.configure(state='disabled')
             self.graph_spectra.configure(state='disabled')
             self.output_textbox.configure(state='normal')
-            self.output_textbox.insert("end", f'{"".join(data[30:35])}', 'red')
+            self.output_textbox.insert("end", f'{"".join(data[30:35])}', 'green')
             self.output_textbox.configure(state='disabled')
             self.Breast_glandularity_combo.configure(values=['1%', '14.3%', '25%', '50%', '75%', '100%'])
             self.Breast_glandularity_combo.set('1%')
-            self.Breast_diameter_combo.configure(values=['10','12','14','16','18'])
+            self.Breast_diameter_combo.configure(values=['10','12','14','19','18'])
             self.Breast_diameter_combo.set('10')
             self.Breast_height_combo.configure(values=['0.5 x diameter', '0.75 x diameter', '1 x diameter'])
             self.Breast_height_combo.set('0.5 x diameter')
@@ -362,14 +366,12 @@ class Main_Window():
         # account for possible errors
         except UnicodeDecodeError:
             pop_up = customtkinter.CTkToplevel()
-            pop_up.geometry('350x50')
-            customtkinter.CTkLabel(pop_up, text='Please enter a valid text file', font=('Calibri', 12)).pack()
+            customtkinter.CTkLabel(pop_up, text='Please enter a valid text file', font=('System', 12)).pack()
                 
         except ValueError:
             pop_up = customtkinter.CTkToplevel()
-            pop_up.geometry('390x50')
-            customtkinter.CTkLabel(pop_up, text='For Hernadez Any spectrum, please enter spectrum ranging from 9 to 70 keV', font=('Calibri', 12)).pack()
-            customtkinter.CTkLabel(pop_up, text='For Sarno Any Spectrum, please enter spectrum ranging from 8 to 80 keV', font=('Calibri', 12)).pack()
+            customtkinter.CTkLabel(pop_up, text='For Hernadez Any spectrum, please enter spectrum ranging from 9 to 70 keV', font=('System', 12)).pack()
+            customtkinter.CTkLabel(pop_up, text='For Sarno Any Spectrum, please enter spectrum ranging from 8 to 80 keV', font=('System', 12)).pack()
     
     # read input spectra
     def read_input_spectra(self):
@@ -416,7 +418,6 @@ class Main_Window():
     
     # calculate mgd
     def calculate_mgd(self,air_kerma_input,air_kerma,dgn,output_units,number_of_projections):
-        # Use input air kerma, dgn coefficient, and number of projections to compute mean glandular dose per projection
         if air_kerma_input != 'mGy':
             if air_kerma_input == 'mrad':
                 air_kerma = air_kerma * 0.01 # convert from mrad air kerma to mGy
@@ -451,7 +452,6 @@ class Main_Window():
         
     # function to calculate dose    
     def calculate_dose(self):
-        # Return dgn value based on data from publications 
         # get inputs
         current_method = self.method_chosen.get()
         air_KERMA_input_units = self.air_KERMA_units_combo.get() 
@@ -568,21 +568,20 @@ class Main_Window():
             pop_up.geometry('500x50')
             
             if air_KERMA_check == 0:
-                customtkinter.CTkLabel(pop_up, text='Please enter a numeric value into the air KERMA entry box or into \nthe number of projections box', font=('Calibri', 16)).pack()
+                customtkinter.CTkLabel(pop_up, text='Please enter a numeric value into the air KERMA entry box or into \nthe number of projections box', font=('System', 19)).pack()
             
             else:
-                customtkinter.CTkLabel(pop_up, text='Please enter only numbers into the air KERMA and ensure \nthat a numeric value is placed into the number of projections', font=('Calibri', 16)).pack()
+                customtkinter.CTkLabel(pop_up, text='Please enter only numbers into the air KERMA and ensure \nthat a numeric value is placed into the number of projections', font=('System', 19)).pack()
                 
         except TypeError: # error in incident spectrum 
             pop_up = customtkinter.CTkToplevel()
             pop_up.geometry('400x50')
             
-            customtkinter.CTkLabel(pop_up, text='Please enter an incident spectrum', font=('Calibri', 16)).pack()
+            customtkinter.CTkLabel(pop_up, text='Please enter an incident spectrum', font=('System', 19)).pack()
 
 #%%% Executable Code
-customtkinter.set_appearance_mode("dark")
+customtkinter.set_appearance_mode("light")
 root = customtkinter.CTk()
-root.geometry("900x595")
 root.title("CT Dose Calculator")
 CT_dose = Main_Window(root)
 root.protocol('WM_DELETE_WINDOW', quit_me)
