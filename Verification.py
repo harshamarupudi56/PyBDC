@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Verification code for  a breast with a diamter 16 cm, radius of 2xradius, and glandularity of 50%. Using the defined keV, I, and coefficients the normalized glandular dose can be computed. The correct value for these parameters 
+Verification code using Sarno any spectrum for a breast with a diamter 16 cm, radius of 2xradius, and glandularity of 50%. Using the defined keV, I, and coefficients the normalized glandular dose can be computed. The correct value for these parameters 
 is 0.03614995451146596. The mean glandular dose was computed using the parameters of 300 projections, 0.5 mAs, and an input air kerma of 5 mR.  
 
 """
