@@ -137,11 +137,12 @@ class Main_Window():
                                              width=120, state='readonly') # V1 = 19.9%, V3 = 9.5%, V5 = 3.8%
         self.VGF_combo.set('V1 = 19.9%')
         self.input_spectra_button = customtkinter.CTkButton(master=self.inputs_frame,
-                                                       width=220,
+                                                            fg_color=("black", "lightgray"),
+                                                       width=100,
                                                        border_width=0,
-                                                       corner_radius=8,
+                                                       corner_radius=2,
                                                        text="Upload Incident Spectrum File",
-                                                       font = ('System',14),
+                                                       font = ('Roman',14),
                                                        command=lambda:self.browse_files())
         self.Breast_diameter_label.grid(row=0,column=0,pady=5,padx=4,sticky=W)
         self.Breast_diameter_combo.grid(row=0,column=1,pady=5, padx=10, sticky=W)
@@ -168,14 +169,14 @@ class Main_Window():
                                                        border_width=0,
                                                        corner_radius=8,
                                                        text="Clear Text",
-                                                       font = ('System',14),
+                                                       font = ('Roman',14),
                                                        command=lambda: self.clear_text())
         self.calculate_button = customtkinter.CTkButton(master=self.output_frame,
                                                        width=120,
                                                        border_width=0,
                                                        corner_radius=8,
                                                        text="Calculate Dose",
-                                                       font = ('System',14),
+                                                       font = ('Roman',14),
                                                        command=lambda: self.calculate_dose())
         
         self.clear_button.grid(row=1,column=0,pady=5,padx=4)
@@ -191,14 +192,14 @@ class Main_Window():
                                                   values=['mAs'], 
                                                   width=80, state='readonly')
         
-        self.air_KERMA_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air KERMA per Projection:')
-        self.air_KERMA_entry = customtkinter.CTkEntry(master= self.kerma_spec_frame, width=80)
-        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air KERMA Units:")
-        self.air_KERMA_units_combo = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
+        self.air_kerma_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text = 'Air kerma per Projection:')
+        self.air_kerma_entry = customtkinter.CTkEntry(master= self.kerma_spec_frame, width=80)
+        self.input_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text="Air kerma Units:")
+        self.air_kerma_units_combo = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
                                                           values=['mrad','mGy','R','mR'], 
                                                           width=80, state='readonly')
-        self.air_KERMA_units_combo.set('R')
-        self.air_KERMA_output_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text='MGD Units:',
+        self.air_kerma_units_combo.set('R')
+        self.air_kerma_output_label = customtkinter.CTkLabel(master= self.kerma_spec_frame, text='MGD Units:',
                                                              anchor=W)
         self.output_units = customtkinter.CTkComboBox(master= self.kerma_spec_frame, 
                                                  values=['mrad','mGy'], width=80,
@@ -211,21 +212,21 @@ class Main_Window():
         
         self.graph_spectra = customtkinter.CTkButton(master=self.kerma_spec_frame,
                                                        width=220,
-                                                       border_width=0,
-                                                       corner_radius=8,
+                                                       border_width=1,
+                                                       corner_radius=10,
                                                        text="Graph Spectrum",
-                                                       font = ('System',14),
+                                                       font = ('Roman',14),
                                                        command=self.plot_spectra)
         
-        self.air_KERMA_label.grid(row=1, column=0, pady=5, padx=4, sticky=W)
-        self.air_KERMA_entry.grid(row=1, column=1, pady=5, padx=12, sticky=W)
+        self.air_kerma_label.grid(row=1, column=0, pady=5, padx=4, sticky=W)
+        self.air_kerma_entry.grid(row=1, column=1, pady=5, padx=12, sticky=W)
         self.number_projections_label.grid(row=2, column=0, pady=5, padx=4, sticky=W)
         self.number_projections_entry.grid(row=2, column=1, pady=5, padx=12, sticky=W)
         self.mAs_label.grid(row=5,column =0, pady=5, padx=4, sticky=W) 
         self.mAs_entry.grid(row=5, column =1, pady =5, padx=12, sticky=W)
         self.input_label.grid(row=3, column=0, pady=5, padx=4, sticky=W)
-        self.air_KERMA_units_combo.grid(row=3, column=1, pady=5, padx=12, sticky=W)
-        self.air_KERMA_output_label.grid(row=4, column=0, pady=5, padx=4, sticky=W)
+        self.air_kerma_units_combo.grid(row=3, column=1, pady=5, padx=12, sticky=W)
+        self.air_kerma_output_label.grid(row=4, column=0, pady=5, padx=4, sticky=W)
         self.output_units.grid(row=4, column=1, pady=5, padx=12, sticky=W)
         self.graph_spectra.grid(row=6,column=0, pady=5, columnspan=2)
         self.graph_spectra.configure(state='disabled')
@@ -234,7 +235,6 @@ class Main_Window():
     # add about command which returns paper citations
     def about(self):
         pop_up = customtkinter.CTkToplevel()
-        pop_up.geometry('750x500')
         textbox = customtkinter.CTkTextbox(master=pop_up, width=750, height= 500)
         textbox.pack(fill ='both')
         
@@ -251,7 +251,6 @@ class Main_Window():
     # add help command
     def help_command(self):
        pop_up = customtkinter.CTkToplevel()
-       pop_up.geometry('800x500')
        textbox = customtkinter.CTkTextbox(master=pop_up, width=800, height= 500)
        textbox.pack(fill ='both')
        
@@ -366,12 +365,12 @@ class Main_Window():
         # account for possible errors
         except UnicodeDecodeError:
             pop_up = customtkinter.CTkToplevel()
-            customtkinter.CTkLabel(pop_up, text='Please enter a valid text file', font=('System', 12)).pack()
+            customtkinter.CTkLabel(pop_up, text='Please enter a valid text file', font=('Roman', 12)).pack()
                 
         except ValueError:
             pop_up = customtkinter.CTkToplevel()
-            customtkinter.CTkLabel(pop_up, text='For Hernadez Any spectrum, please enter spectrum ranging from 9 to 70 keV', font=('System', 12)).pack()
-            customtkinter.CTkLabel(pop_up, text='For Sarno Any Spectrum, please enter spectrum ranging from 8 to 80 keV', font=('System', 12)).pack()
+            customtkinter.CTkLabel(pop_up, text='For Hernadez Any spectrum, please enter spectrum ranging from 9 to 70 keV', font=('Roman', 12)).pack()
+            customtkinter.CTkLabel(pop_up, text='For Sarno Any Spectrum, please enter spectrum ranging from 8 to 80 keV', font=('Roman', 12)).pack()
     
     # read input spectra
     def read_input_spectra(self):
@@ -454,20 +453,20 @@ class Main_Window():
     def calculate_dose(self):
         # get inputs
         current_method = self.method_chosen.get()
-        air_KERMA_input_units = self.air_KERMA_units_combo.get() 
+        air_kerma_input_units = self.air_kerma_units_combo.get() 
         output_units = self.output_units.get() 
-        air_KERMA = self.air_KERMA_entry.get()
+        air_kerma = self.air_kerma_entry.get()
         number_of_projections = self.number_projections_entry.get()
         
         
         try:
-            air_KERMA_check = len(air_KERMA)
+            air_kerma_check = len(air_kerma)
             number_of_projections_check = len(number_of_projections)
-            air_KERMA = float(air_KERMA) # check if only numbers
+            air_kerma = float(air_kerma) # check if only numbers
             mAs_per_projection = float(self.mAs_entry.get())
-            air_KERMA = mAs_per_projection * air_KERMA
+            air_kerma = mAs_per_projection * air_kerma
             
-            if air_KERMA_check == 0 or number_of_projections_check == 0:
+            if air_kerma_check == 0 or number_of_projections_check == 0:
                 raise(ValueError)
             
             elif current_method == 2 or current_method==3:
@@ -489,7 +488,7 @@ class Main_Window():
                 dgn = dgn_subtable_glandularity.loc[float(HVL), str(breast_diameter)]
                 
                 # calculate mgd
-                self.mgd = self.calculate_mgd(air_KERMA_input_units, air_KERMA, dgn, output_units,number_of_projections)
+                self.mgd = self.calculate_mgd(air_kerma_input_units, air_kerma, dgn, output_units,number_of_projections)
                 
                 self.output_dose('Breast diameter: ', breast_diameter,
                                  'HVL: ', HVL,
@@ -513,7 +512,7 @@ class Main_Window():
                 # calulate dgn 
                 dgn = calculate_pDgNct('Sarno Koning',variables,self.keV,self.I) # units of mGy/mGy
                                 
-                self.mgd = self.calculate_mgd(air_KERMA_input_units, air_KERMA, dgn, output_units,number_of_projections)
+                self.mgd = self.calculate_mgd(air_kerma_input_units, air_kerma, dgn, output_units,number_of_projections)
                 
                 self.output_dose('Breast diameter: ' ,breast_diameter,
                                  'Breast Glandularity: ', breast_glandularity,
@@ -542,7 +541,7 @@ class Main_Window():
                 print(dgn)
                 
                 #print(dgn)
-                self.mgd = self.calculate_mgd(air_KERMA_input_units, air_KERMA, dgn, output_units,number_of_projections)
+                self.mgd = self.calculate_mgd(air_kerma_input_units, air_kerma, dgn, output_units,number_of_projections)
                 
                 self.output_dose('VGF: ', self.VGF_combo.get())
             
@@ -557,7 +556,7 @@ class Main_Window():
                 dgn = dgn_subtable_breast_height[breast_glandularity].tolist()[0]
                
                 # calculate mgd
-                self.mgd = self.calculate_mgd(air_KERMA_input_units, air_KERMA, dgn, output_units,number_of_projections)
+                self.mgd = self.calculate_mgd(air_kerma_input_units, air_kerma, dgn, output_units,number_of_projections)
                 
                 self.output_dose('Breast diameter: ', breast_diameter,
                                  'Breast_glandularity: ' , breast_glandularity,
@@ -565,24 +564,27 @@ class Main_Window():
                 
         except ValueError: # error in air kerma inputs
             pop_up = customtkinter.CTkToplevel()
-            pop_up.geometry('500x50')
             
-            if air_KERMA_check == 0:
-                customtkinter.CTkLabel(pop_up, text='Please enter a numeric value into the air KERMA entry box or into \nthe number of projections box', font=('System', 19)).pack()
+            if air_kerma_check == 0:
+                customtkinter.CTkLabel(pop_up, text='Please enter a numeric value into the air kerma entry box or into \nthe number of projections box', font=('Roman', 12)).pack()
             
             else:
-                customtkinter.CTkLabel(pop_up, text='Please enter only numbers into the air KERMA and ensure \nthat a numeric value is placed into the number of projections', font=('System', 19)).pack()
+                customtkinter.CTkLabel(pop_up, text='Please enter only numbers into the air kerma and ensure \nthat a numeric value is placed into the number of projections', font=('Roman', 12)).pack()
                 
         except TypeError: # error in incident spectrum 
             pop_up = customtkinter.CTkToplevel()
-            pop_up.geometry('400x50')
             
-            customtkinter.CTkLabel(pop_up, text='Please enter an incident spectrum', font=('System', 19)).pack()
+            customtkinter.CTkLabel(pop_up, text='Please enter an incident spectrum', font=('Roman', 12)).pack()
 
 #%%% Executable Code
 customtkinter.set_appearance_mode("light")
 root = customtkinter.CTk()
-root.title("CT Dose Calculator")
+root.title("BCT Dose Calculator")
 CT_dose = Main_Window(root)
 root.protocol('WM_DELETE_WINDOW', quit_me)
 root.mainloop()
+
+
+
+
+
