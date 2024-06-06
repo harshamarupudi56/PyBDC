@@ -2,8 +2,7 @@ Welcome to PyBDC Documentation!
 =====================================
 
 Python toolkit for calculating mean glandular dose for breast CT.
-The following software enables accurate dose estimation for one or various breast exposures specifically for breast CT. The software can be used on Windows, Mac, and Linux through the use of a Python based GUI. The mode is further explained below along with an overview of the methods, how to choose a method, the program inputs and buttons, the incident spectrum format, images of the GUI, and the accompanying data files.
-
+The following software enables accurate breast dosage estimations based on four different models from well published papers. The software can be used on Windows, Mac, and Linux through the use of a Python based GUI. The different methods along with the input parameters are explained in this documentation. The purpose of this tool is to allow breast CT reseachers, medical physicists, and developers a simple method for comapring the dosage between different CT systems to ensure substantial equivalence. 
 
 Table of Contents
 ==================
@@ -36,39 +35,48 @@ Currently supports the following breast models:
 
 Detailed descriptions on individual methods are provided in section :ref:`Methods Overview`.
 
-Installation
-==================
-**Clone PyBDC repository** 
-
-git clone https://github.com/harshamarupudi56/PyBDC.git
-
-**Run the following commands to install required dependencies** 
-
-apt-get -y install python3.11-tk
-
-apt-get -y install pip
-
-cd PyBDC
-
-pip install -r requirements.txt
-
-**The required dependencies located in requirements.txt** 
-
-customtkinter==5.2.2
-
-matplotlib==3.8.0
-
-numpy==1.26.0
-
-pandas==1.3.4
-
-**Run PyBDC Main Script**
-
-PyBDC.py
-
-
 **PyBDC Team:**
+
 Harsha Marupudi, Jospeh Manus, Bahaa Ghammraoui 
+
+
+**License**
+
+BSD 3-Clause License
+
+Copyright (c) 2023, Harsha Marupudi, Joseph Manus, Bahaa Ghammraoui 
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+**Disclaimer**
+
+This software and documentation was developed at the Food and Drug Administration (FDA) by employees of the Federal Government in the course of their official duties. Pursuant to Title 17, Section 105 of the United States Code, this work is not subject to copyright protection and is in the public domain. Permission is hereby granted, free of charge, to any person obtaining a copy of the Software, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, or sell copies of the Software or derivatives, and to permit persons to whom the Software is furnished to do so. FDA assumes no responsibility whatsoever for use by other parties of the Software, its source code, documentation or compiled executables, and makes no guarantees, expressed or implied, about its quality, reliability, or any other characteristic. Further, use of this code in no way implies endorsement by the FDA or confers any advantage in regulatory decisions. Although this software can be redistributed and/or modified freely, we ask that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified.
+
 
 **Citations:**
 
