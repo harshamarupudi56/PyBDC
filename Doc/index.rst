@@ -18,8 +18,6 @@ Table of Contents
    methods
    gui
 
-   examples
-
 Methods Overview 
 ==================
 
