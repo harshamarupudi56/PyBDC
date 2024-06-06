@@ -1,8 +1,8 @@
 Welcome to PyBDC Documentation!
 =====================================
 
-Python toolkit for calculating dosage for breast CT.\
-The following software enables accurate dose estimation for one or various breast exposures specifically for breast CT. The software can be used on Windows and Mac operating systems and using a graphical user interface. The mode is further explained below along with an overview of the methods, how to choose a method, the program inputs and buttons, the incident spectrum format, images of the GUI, and the accompanying data files.
+Python toolkit for calculating mean glandular dose for breast CT.
+The following software enables accurate dose estimation for one or various breast exposures specifically for breast CT. The software can be used on Windows, Mac, and Linux through the use of a Python based GUI. The mode is further explained below along with an overview of the methods, how to choose a method, the program inputs and buttons, the incident spectrum format, images of the GUI, and the accompanying data files.
 
 
 Table of Contents
@@ -24,11 +24,14 @@ Table of Contents
 Methods Overview 
 ==================
 
-Currently supports the following plugins:
+Currently supports the following breast models:
 
 * Sarno Any Spectrum
+
 * Hernandez Any Spectrum
+
 * Sarno 49 kVp W Spectra
+
 * Sechopoulus 49 kvP W Spectra 
 
 Detailed descriptions on individual methods are provided in section :ref:`Methods Overview`.
@@ -42,8 +45,11 @@ git clone https://github.com/harshamarupudi56/PyBDC.git
 **Run the following commands to install required dependencies** 
 
 apt-get -y install python3.11-tk
+
 apt-get -y install pip
+
 cd PyBDC
+
 pip install -r requirements.txt
 
 **The required dependencies located in requirements.txt** 
@@ -56,9 +62,9 @@ numpy==1.26.0
 
 pandas==1.3.4
 
-**Run PyBDC**
+**Run PyBDC Main Script**
 
-python3 PyBDC.py
+PyBDC.py
 
 
 **PyBDC Team:**
