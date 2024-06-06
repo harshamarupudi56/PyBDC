@@ -10,9 +10,12 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
-    # You can also specify other tool versions:
-    # nodejs: "19"
-    # rust: "1.64"
-    # golang: "1.19"
 
+# Define the necessary dependencies
+python:
+  install:
+    - requirements: requirements.txt
 
+# Configure Sphinx
+sphinx:
+  configuration: Doc/conf.py
