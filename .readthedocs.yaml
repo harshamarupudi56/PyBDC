@@ -14,7 +14,7 @@ build:
 # Define the necessary dependencies
 python:
   install:
-    - requirements: requirements.txt
+    - requirements: Doc/requirements.txt
 
 # Configure Sphinx
 sphinx:
