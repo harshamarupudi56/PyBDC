@@ -7,10 +7,6 @@ author = 'Harsha Marupudi'
 release = '0.1'
 version = '0.1.0'
 
-python:
-  install:
-    - requirements: Doc/requirements.txt
-    - method: pip
       
 extensions = [
     'sphinx.ext.duration',
@@ -18,9 +14,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx_rtd_theme',
 ]
-html_theme = "sphinx_rtd_theme"
+
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
