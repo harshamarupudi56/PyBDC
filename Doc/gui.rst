@@ -4,7 +4,7 @@ GUI Overview
 The GUI runs on Windows and Mac. All inputs and buttons are shown in the screenshots of the interface below. 
 
 
-.. image:: GUI_Example.png
+.. image:: GUI_Example.PNG
 
 
 Figure 1: Screen captures of PyBDC program. The image shows example inputs used by the GUI to compute the mean glandular dose. The provided example is for the Sarno method with an incident spectrum measured at 55 kVp, with 2 mm of aluminum filtration. The incident spectrum is also plotted in the figure. 
