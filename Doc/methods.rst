@@ -1,11 +1,20 @@
 Methods Overview
 ==================
 
-The two Sarno Methods, Sarno Koning BCT and Sarno Incidental Spectrum methods are from the following paper: A Monte Carlo study of monoenergetic and polyenergetic normalized glandular dose (DgN) coefficients in mammograph*. The Hernandez Heterogeneous BCT method is from the following paper: Updated breast CT dose coefficients (DgNct) using patient-derived breast shapes and heterogeneous fibroglandular distributions. Lastly, the Sechopoulos method is from the following paper: Dosimetric characterization of a dedicated breast computed tomography clinical prototype***.
+There are 4 methods available in PyBCD: 
 
-The Sarno Koning BCT utilizes the Koning BCT apparatus which houses a 49 kVp W-anode with 1.40 mm Al. Other values are included because of possible variations in Al filter length. Sarno incidental on the other hand, uses an inputted incident spectrum. The paper, which contains both methods, models the breast as a cylinder of homogeneous mixture of adipose and glandular tissue. It further assumes a 1.45 mm thick skin layer and a radiation source placed 650 mm from the isocenter.
+*Sarno 49 kVp W Spectra (Sarno Koning BCT) 
 
-Similar to the Sarno Koning BCT, the Sechopolous method utilizes the Koning BCT apparatus. However, the method uses a single HVL value of 1.32 mm Al and models the breast as a semi-ellipsoid of homogeneous mixture of adipose and glandular tissue.
+*Sechopoulos 49 kVp Any Spectra (Sechopoulos Koning BCT) 
+
+*Sarno Any Specturm 
+
+*Hernandez Any Spectrum (Hernandez Heterogeneous BCT) 
+
+
+The Sarno Koning BCT method utilizes the Koning BCT apparatus which houses a 49 kVp W-anode with 1.40 mm Al. Other values are included because of possible variations in Al filter length. Sarno Any Spectrum on the other hand makes use of an incident X-ray spectrum input by the user. The Sarno model represents the breast as a cylinder with a homogoneous mixture of glandular and adipose tisssue. Additonally the model assumes a 1.45 mm thick skin layer and a radiation source placed 650 mm from the isocenter.
+
+Sechopolous method also uses the Koning BCT apparatus. However, the method uses a single HVL value of 1.32 mm Al and models the breast as a semi-ellipsoid with a homogeneous mixture of adipose and glandular tissue.
 
 The Hernandez Heterogeneous BCT method compared to the Sarno methods, models the breast as a heterogeneous mixture of adipose and glandular tissue where the individual tissues voxels are either 100% adipose or 100% glandular. The skin thickness is assumed to be 1.5 mm and the radiation source is placed 650 mm from the isocenter. Rather than being characterized by breast glandularity, this method uses volume glandular fraction or VGF for short. The heterogeneous categories, V1, V3, and V5 are characterized as follows:
 
@@ -16,7 +25,6 @@ V3: Volume Glandular Fraction (VGF) = 9.5%, median volume of 616 cm3, median dia
 V5: Volume Glandular Fraction (VGF) = 3.8%, median volume of 1174 cm3, median diameter through the center of 124.4 mm, and median diameter at the chest wall of 150.4 mm
 
 
- 
 Choosing a Method
 ==================
 The GUI offers three methods the user can choose from which are Sarno Koning BCT, Sarno Incident Spectrum, and Hernandez Heterogeneous BCT via radio button selection. Next to each method, a radio button can be found that if pressed selects the method. You will note that once pressed, certain buttons and parameters are activated, and others are deactivated. What is activated and deactivated is as follows:
@@ -78,10 +86,6 @@ Table 1 shows summarizes all the inputs into the program, the format, and the va
 Table 1. Summary of parameters and their inputs.
 
 
-
-
-Table 2. Summary of Buttons and their functions.
-
 +----------------------+------------------------------------------------------------------+
 | Button               | Function                                                         |
 +======================+==================================================================+
@@ -99,7 +103,7 @@ Table 2. Summary of Buttons and their functions.
 |                      | dose along with the selected values of the parameters.          |
 +----------------------+------------------------------------------------------------------+
 
-
+Table 2. Summary of Buttons and their functions.
 
 The chosen incident spectrum file must have a specific format which differs for the method chosen. This format is further elucidated in the Incident Spectrum Format section found below.
 
