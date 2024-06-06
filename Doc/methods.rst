@@ -3,13 +3,13 @@ Methods Overview
 
 There are 4 methods available in PyBCD: 
 
-*Sarno 49 kVp W Spectra (Sarno Koning BCT) 
+Sarno 49 kVp W Spectra (Sarno Koning BCT) 
 
-*Sechopoulos 49 kVp Any Spectra (Sechopoulos Koning BCT) 
+Sechopoulos 49 kVp Any Spectra (Sechopoulos Koning BCT) 
 
-*Sarno Any Specturm 
+Sarno Any Specturm 
 
-*Hernandez Any Spectrum (Hernandez Heterogeneous BCT) 
+Hernandez Any Spectrum (Hernandez Heterogeneous BCT) 
 
 
 The Sarno Koning BCT method utilizes the Koning BCT apparatus which houses a 49 kVp W-anode with 1.40 mm Al. Other values are included because of possible variations in Al filter length. Sarno Any Spectrum on the other hand makes use of an incident X-ray spectrum input by the user. The Sarno model represents the breast as a cylinder with a homogoneous mixture of glandular and adipose tisssue. Additonally the model assumes a 1.45 mm thick skin layer and a radiation source placed 650 mm from the isocenter.
