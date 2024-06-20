@@ -1,0 +1,56 @@
+Quick Start Guide
+
+1. To begin start by choosing a method: Sarno Koning, Sarno Incident Spectrum, or Hernandez Heterogeneous BCT
+	
+	a) Each method can be selected by selecting the radio button next to the method
+
+		i) the default is Sarno Incident Spectrum
+
+	c) Selecting the Sarno Koning BCT will lead to an output in the text box stating a description of Koning 
+	   BCT apparatus
+
+	b) Selecting the Hernandez Heterogeneous BCT method will lead to the text box on the bottom corner being
+	   filled with the a description for each of the heterogeneous categories
+
+2. After selecting a method, choose your parameters in the box next over
+	
+	a) Sample parameters include breast diameter, breast height, etc.
+	
+	b) Simply click on the downward arrow and choose the parameter of your choice
+
+	c) You'll notice some parameters are deactivated and this is due to the method of your choice. Each method
+	   uses different sets of parameters. As such, the parameters necessary for the method will remain active 
+	   and those not necessary will remain inactive
+
+3. After choosing parameters, enter your air KERMA along with the input units and the desired output units.
+	
+	a) Simply enter your air KERMA into the air KERMA box and like before choose the input units in Air KERMA 
+	   Units and output units via MGD Units by pressing the downward arrow
+
+4. Depending on the method of your choice, you will have the option to input an incident spectrum and graph that 
+   spectrum
+
+	a) If you have chosen either Sarno Incident Spectrum or Hernandez Heterogeneous BCT, the option the input an 
+	   incident spectrum will be available to you. 
+		
+		i) This is not optional; you must enter an incident spectrum for the method to work 
+	
+	b) Simply press the Input Incident Spectrum Button and a popup will appear prompting you to choose a file. 
+	   Please select an appropriate text file following the format outlined in the complete user guide.
+	
+		i) Once an acceptable file has been chosen, a shortened file name will appear in the text box found on
+		   the bottom left
+	
+	c) After inputting the file, the Graph Spectrum button will activate. You can then press the Graph Spectrum 
+	   button which will display your incident spectrum on the graph
+
+5. Once you are satisfied with all your inputs, you can press the Calculate Dose button found at the bottom left corner 
+   next to the Clear Text button
+
+	a) Pressing the Calculate Dose button will lead to an output in the text box of your mean glandular dose value 
+	   and your chosen parameters. 
+	
+	b) The text will remain in the box unless you elect to clear the box. The box can be easily cleared by pressing 
+	   the Clear Text button. Do note that your previous values will be cleared and cannot be retrieved. 	
+
+6. For a complete user guide refer to the user guide
