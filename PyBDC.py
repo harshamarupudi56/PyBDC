@@ -15,7 +15,7 @@ from matplotlib.pyplot import style as plt_style, ioff as plt_ioff, figure as pl
 plt_ioff() # suppress pyplot popups
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys 
-from tkinter_dose_equations_2 import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
+from dose_equations import Sarno_mono_dgn, Sarno_poly_dgn, sarno_dgnct, Hernandez_hetero_mono_dgn, exposure_per_fluence, Sechopoulos_poly_dgn 
 
 
 #%% important functions
@@ -43,7 +43,7 @@ def calculate_pDgNct(*values):
     return pDgN
 
 # read method outputs
-with open('method_specific_outputs.txt','r') as file:
+with open('method_specific_inputs.txt','r') as file:
      data = file.readlines() # all the outputs
      
 
