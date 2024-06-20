@@ -31,5 +31,6 @@ The Sechopoulos DgN text file contains a column for the breast diameter, breast 
  
 Python file for dose equations:
 dose_equations.py
+
 This file simply reads the different tables mentioned above and converts them into a pandas data frame. The file further contains the necessary equations for calculating mean glandular dose values.
 
