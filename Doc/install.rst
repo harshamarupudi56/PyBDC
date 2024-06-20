@@ -4,7 +4,7 @@ Installation
 
 .. code-block:: shell
 
-        git clone https://github.com/harshamarupudi56/PyBDC.git
+        git clone https://github.com/DIDSR/PyBDC.git
 
 **Run the following commands to install required dependencies** 
 
