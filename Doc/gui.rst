@@ -14,13 +14,14 @@ Data Files
 The program requires several data files found within the program directory. These data files consist of the dose tables necessary for dose calculations and a python file to read the text files and convert them to a pandas data frame which can be easily accessed. The following are the necessary data files:
 
 Dose tables:
-*Hernandez_heterogeneous_dgn
 
-*Sarno_mono_dgn
+* Hernandez_heterogeneous_dgn
 
-*Sarno_poly_dgn
+* Sarno_mono_dgn
 
-*Sechopoulos_dgn
+* Sarno_poly_dgn
+
+* Sechopoulos_dgn
 
 The Hernandez heterogeneous text file contains columns for the photon energy values, and the different volume glandular fractions (V1, V3, and V5). The coefficients range are in units of mGy/mGy and range from 9 to 70 keV with a step size of 1. 
 
