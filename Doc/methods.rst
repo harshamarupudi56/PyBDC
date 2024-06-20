@@ -116,4 +116,3 @@ Incident Spectrum Format
 First, the incident spectrum must be saved in a text file (typically a ‘.txt’ file but any text file format is accepted) and it can have any name (there is no naming convention). Next, the text file inputs must be in the form of two columns where the keV is the first column and the counts is the second column. It should be noted that keV uses a step size of 0.5. Any step size can be used. The Hernandez Heterogeneous BCT DgN coefficients are interpolated to fit any step size.
  
 Furthermore, Sarno Incident Spectrum and Hernandez Heterogeneous BCT take different ranges of values. Sarno Incident Spectrum uses a keV range of 8-80 keV inclusive. Hernandez Heterogeneous BCT, on the other hand, uses a range of 7-90 keV inclusive.
- 
