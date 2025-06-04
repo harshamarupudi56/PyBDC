@@ -1,7 +1,7 @@
 Methods Overview
 ==================
 
-There are 4 methods available in PyBCD: 
+There are 4 methods available in PyBDC: 
 
 * Sarno 49 kVp W Spectra (Sarno Koning BCT) 
 
