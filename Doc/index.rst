@@ -1,8 +1,8 @@
 Welcome to PyBDC Documentation!
 =====================================
 
-Python toolkit for calculating mean glandular dose for breast CT.
-The following software enables accurate breast dosage estimations based on four different models from well published papers. The software can be used on Windows, Mac, and Linux through the use of a Python based GUI. The different methods along with the input parameters are explained in this documentation. The purpose of this tool is to allow breast CT reseachers, medical physicists, and developers a simple method for comapring the dosage between different CT systems to ensure substantial equivalence. 
+PyBDC is a Python toolkit for calculating mean glandular dose for breast CT.
+The following software enables accurate breast dosage estimations based on four different models from well published papers. The software can be used on Windows, Mac, and Linux using a Python based GUI. The different methods along with the input parameters are explained in this documentation. The purpose of this tool is to allow breast CT researchers, medical physicists, and developers a simple method for comparing the dosage between different CT systems to ensure substantial equivalence. 
 
 Table of Contents
 ==================
