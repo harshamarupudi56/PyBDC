@@ -7,12 +7,12 @@ There are 4 methods available in PyBCD:
 
 * Sechopoulos 49 kVp Any Spectra (Sechopoulos Koning BCT) 
 
-* Sarno Any Specturm 
+* Sarno Any Spectrum  
 
 * Hernandez Any Spectrum (Hernandez Heterogeneous BCT) 
 
 
-The Sarno Koning BCT method utilizes the Koning BCT apparatus which houses a 49 kVp W-anode with 1.40 mm Al. Other values are included because of possible variations in Al filter length. Sarno Any Spectrum on the other hand makes use of an incident X-ray spectrum input by the user. The Sarno model represents the breast as a cylinder with a homogoneous mixture of glandular and adipose tisssue. Additonally the model assumes a 1.45 mm thick skin layer and a radiation source placed 650 mm from the isocenter.
+The Sarno Koning BCT method utilizes the Koning BCT apparatus which houses a 49 kVp W-anode with 1.40 mm Al. Other values are included because of possible variations in Al filter length. Sarno Any Spectrum on the other hand makes use of an incident X-ray spectrum input by the user. The Sarno model represents the breast as a cylinder with a homogeneous  mixture of glandular and adipose tissue. Additionally, the model assumes a 1.45 mm thick skin layer and a radiation source placed 650 mm from the isocenter.
 
 Sechopolous method also uses the Koning BCT apparatus. However, the method uses a single HVL value of 1.32 mm Al and models the breast as a semi-ellipsoid with a homogeneous mixture of adipose and glandular tissue.
 
@@ -35,7 +35,7 @@ Sarno 49 kVp W Spectra (Sarno Koning BCT)
 
 * Deactivated: Heterogeneous Categories, Input Incident Spectrum, and Graph Spectrum
 
-* Assumptions: Cylindrical breats of homogenous composition. Skin layer of 1.45 cm. 65 cm radiation source to isocenter distance. 
+* Assumptions: Cylindrical breasts of homogenous composition. Skin layer of 1.45 cm. 65 cm radiation source to isocenter distance. 
 
 Sechopoulos 49 kVp Any Spectra (Sechopoulos Koning BCT) 
 
@@ -45,13 +45,13 @@ Sechopoulos 49 kVp Any Spectra (Sechopoulos Koning BCT)
 
 * Assumptions: Semi-ellipsoidal breast of homogeneous composition. Skin layer of 1.45 mm. 65 cm radiation source to isocenter distance. 
 
-Sarno Any Specturm 
+Sarno Any Spectrum  
 
 * Activated: Breast Diameter, Breast Height, Breast Glandularity, Air Kerma, Air Kerma units, MGD units, Input Incident Spectrum, Graph Spectrum*, Clear Text, and Calculate Dose
 
 * Deactivated: HVL, Heterogeneous Categories
 
-* Assumptions: Cylindircal brast of homogenous compositon. 65 cm radiatoin source to isocenter distance. 
+* Assumptions: Cylindrical breast of homogenous composition. 65 cm radiation source to isocenter distance. 
 
 Hernandez Any Spectrum (Hernandez Heterogeneous BCT) 
 
