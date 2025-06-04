@@ -25,7 +25,7 @@ Dose tables:
 
 The Hernandez heterogeneous text file contains columns for the photon energy values, and the different volume glandular fractions (V1, V3, and V5). The coefficients range are in units of mGy/mGy and range from 9 to 70 keV with a step size of 1. 
 
-The Sarno monoergentic DgN text file contains columns for the different breast diameters, the glandularity, and the breast height value. The DgN coefficients are in units of mGy/mGy. Lastly, the Sarno polyenergetic DgN text file contains columns for the HVL lengths, the different breast diameters, the glandularity, and the breast heights.
+The Sarno monoenergetic  DgN text file contains columns for the different breast diameters, the glandularity, and the breast height value. The DgN coefficients are in units of mGy/mGy. Lastly, the Sarno polyenergetic DgN text file contains columns for the HVL lengths, the different breast diameters, the glandularity, and the breast heights.
 
 The Sechopoulos DgN text file contains a column for the breast diameter, breast length, and the different glandularities. The coefficients are in units of mGy/mGy.
  
